@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Implementation-Title: springcloud
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: liuxuejian
+Built-By: ￩ﾸﾽ￥ﾭﾐ
 Implementation-Vendor-Id: springboot-demo
 Build-Jdk: 1.8.0_171
 Implementation-URL: http://maven.apache.org

@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import io.netty.channel.ChannelHandler.Sharable;
+import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
 import springboot_demo.springcloud.utils.MethodInvokeMeta;
 
 @Component
 @Sharable
-public class ServerChannelHandlerAdapter extends ChannelInboundHandlerAdapter  {
+public class ServerChannelHandlerAdapter extends ChannelHandlerAdapter {
 
 	/**
 	* 日志处理
@@ -31,7 +31,6 @@ public class ServerChannelHandlerAdapter extends ChannelInboundHandlerAdapter  {
        ctx.close();
    }
 
-   @Override
    public void channelRead(ChannelHandlerContext ctx, Object msg) {
        MethodInvokeMeta invokeMeta = (MethodInvokeMeta) msg;
        // 屏蔽toString()方法
@@ -41,5 +40,5 @@ public class ServerChannelHandlerAdapter extends ChannelInboundHandlerAdapter  {
                    invokeMeta.getArgs(), invokeMeta.getReturnType());
        dispatcher.dispatcher(ctx, invokeMeta);
    }
-
+  
 }

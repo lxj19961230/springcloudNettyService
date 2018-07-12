@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 import io.netty.channel.ChannelFuture;
@@ -18,7 +19,7 @@ import springboot_demo.springcloud.utils.ResponseResult;
 import springboot_demo.springcloud.utils.ResponseResultUtil;
 
 @Component
-public class RequestDispatcher {
+public class RequestDispatcher implements ApplicationContextAware{
 	private ExecutorService executorService = Executors.newFixedThreadPool(NettyConstant.getMaxThreads());
 	private ApplicationContext app;
 

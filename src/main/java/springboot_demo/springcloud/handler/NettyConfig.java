@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "netty")
 public class NettyConfig {
 
-   private int port = 11111;
+   private int port = 8090;
    
 
 public int getPort() {
